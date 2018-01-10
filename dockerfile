@@ -33,8 +33,8 @@ RUN cd  /usr/local/server &&\
     ./configure --prefix=/usr/local/server/php/ \
                 --with-config-file-path=/usr/local/server/php/etc/ \
                 --with-config-file-scan-dir=/usr/local/server/php/etc/php.d \
-                --enable-fpm --with-fpm-user=nginx \
-                --with-fpm-group=nginx \
+                --enable-fpm --with-fpm-user=www \
+                --with-fpm-group=www \
                 --with-zlib \
                 --with-libxml-dir \
                 --enable-sockets \
