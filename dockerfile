@@ -69,4 +69,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 #安装swoole
 RUN /usr/local/server/php/bin/pecl install swoole
+RUN /usr/local/server/php/bin/pecl install redis
 RUN echo "extension=swoole" >> /usr/local/server/php/etc/php.ini 
+RUN echo "extension=redis" >> /usr/local/server/php/etc/php.ini 
