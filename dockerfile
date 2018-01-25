@@ -67,7 +67,7 @@ RUN ln -s /usr/local/server/nginx/bin/nginx /usr/local/bin
 #安装composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-#安装swoole
+#安装swoole和redis扩展
 RUN /usr/local/server/php/bin/pecl install swoole
 RUN /usr/local/server/php/bin/pecl install redis
 RUN echo "extension=swoole" >> /usr/local/server/php/etc/php.ini 
