@@ -5,7 +5,7 @@ MAINTAINER DavidCr crliujin@163.com
 RUN yum install -y  gcc-c++ autoconf make cmake vim 
 
 #安装nginx-php支持
-RUN yum -y install bzip2-devel curl-devel freetype-devel gcc libjpeg-devel libpng-devel libxslt-devel libxml2-devel openssl-devel pcre-devel pcre-devel zlib-devel
+RUN yum -y install bzip2-devel curl-devel freetype-devel gcc libjpeg-devel libpng-devel libxslt-devel libxml2-devel openssl-devel pcre-devel pcre-devel zlib-devel python-setuptools
 
 RUN yum -y install wget 
 #安装pcre-devel支持伪静态
@@ -74,3 +74,7 @@ RUN echo "extension=swoole" >> /usr/local/server/php/etc/php.ini
 #安装redis扩展
 RUN /usr/local/server/php/bin/pecl install redis
 RUN echo "extension=redis" >> /usr/local/server/php/etc/php.ini 
+
+
+# 安装supervisor
+RUN easy_install supervisor
