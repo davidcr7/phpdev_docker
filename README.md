@@ -15,8 +15,7 @@ exp：
     - ./www.conf:/usr/local/server/php/etc/php-fpm.d/www.conf
     - /www:/www
     
-    改成
-    
+    改成  
   volumes:
     - ./www.conf:/usr/local/server/php/etc/php-fpm.d/www.conf
     - {本地项目路径}:/www
