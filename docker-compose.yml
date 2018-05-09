@@ -1,0 +1,31 @@
+version: '3.6'
+services:
+  nginx: 
+    build: ./nginx
+    container_name: nginx
+    ports: 
+      - "80:80"
+    volumes:
+      - /www:/www
+      - ./nginx.conf:/usr/local/server/nginx/conf/nginx.conf
+    links:
+      - php
+    depends_on:
+      - php
+  php:
+    build: ./php
+    container_name: php
+    volumes:
+     - ./www.conf:/usr/local/server/php/etc/php-fpm.d/www.conf
+     - /www:/www
+    expose:
+      - "9000"
+    links:
+      - redis      
+  redis:
+    build: ./redis
+    container_name: redis
+    volumes:
+      - ./redis.conf:/usr/local/server/redis-4.0.9/redis.conf
+    expose:
+      - "6379"   
