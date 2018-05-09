@@ -3,6 +3,7 @@
 nginx文件夹：nginx镜像（添加了supervisor进程管理工具）
 php文件夹：php镜像（添加了swoole、yaf扩展等）
 redis文件夹：redis镜像
+conf:nginx、php、redis的配置文件
 
 使用docker-compose管理以上三个容器
 
