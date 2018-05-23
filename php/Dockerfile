@@ -10,7 +10,7 @@ RUN apk update
 RUN apk add --no-cache g++ gcc autoconf make vim curl file linux-headers
 
 #安装php扩展库
-RUN apk add --no-cache bzip2-dev curl-dev freetype-dev libjpeg-turbo-dev libpng-dev libxslt-dev libxml2-dev openssl-dev zlib-dev libaio-dev
+RUN apk add --no-cache bzip2-dev curl-dev freetype-dev libjpeg-turbo-dev libpng-dev libxslt-dev libxml2-dev openssl-dev zlib-dev libaio-dev gd
 
 #添加用户组
 RUN set -x &&\
@@ -29,6 +29,7 @@ RUN cd  /usr/local/server &&\
                 --enable-fpm --with-fpm-user=www \
                 --with-fpm-group=www \
                 --with-zlib \
+                --with-gd \
                 --with-libxml-dir \
                 --enable-sockets \
                 --with-curl \
