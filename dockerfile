@@ -54,7 +54,7 @@ RUN cd  /usr/local/server &&\
                 --with-mysqli \
                 --with-mysql-sock \
                 --with-pdo-mysql \
-                --disable-fileinfo &&\
+                --disable-fileinfo \
                 --enable-bcmath &&\
     make && make install
 
