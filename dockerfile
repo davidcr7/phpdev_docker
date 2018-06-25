@@ -55,6 +55,7 @@ RUN cd  /usr/local/server &&\
                 --with-mysql-sock \
                 --with-pdo-mysql \
                 --disable-fileinfo &&\
+                --enable-bcmath &&\
     make && make install
 
 RUN cp  /usr/local/server/php-7.2.1/php.ini-production /usr/local/server/php/etc/php.ini &&\
