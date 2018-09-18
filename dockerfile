@@ -22,7 +22,7 @@ RUN mkdir /usr/local/server &&\
     wget http://nginx.org/download/nginx-1.13.8.tar.gz &&\
     tar -zxvf nginx-1.13.8.tar.gz  -C /usr/local/server &&\
     cd nginx-1.13.8 &&\
-    ./configure --prefix=/usr/local/server/nginx &&\
+    ./configure --prefix=/usr/local/server/nginx --with-http_ssl_module&&\
     make && make install
 
 #下载安装php
